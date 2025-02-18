@@ -1,0 +1,12 @@
+services:
+  react-notas-dev:
+    image: usuario001/docker-base-react:latest
+    container_name: react-notas
+    working_dir: /home/jp/app
+    volumes:
+      - .:/home/jp/app
+    ports:
+      - "3000:3000"
+      - "4000:4000"
+    stdin_open: true
+    tty: true
