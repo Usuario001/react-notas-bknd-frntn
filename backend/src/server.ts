@@ -44,11 +44,10 @@ app.post('/api/files', upload.single('file'), async (req, res) => {
 })
 
 
-//TODO finish this endpoint
 app.get('/api/users', async (req, res) => {
-    //extract the query param from request
+    //1) Extract the query param from request
     const { q } = req.query
-    //validate that we have the query
+    //2) Validate that we have the query
     if ( !q ){
         res.status(500).json({message:'Query param `q` is required'})
         return;
@@ -59,12 +58,16 @@ app.get('/api/users', async (req, res) => {
         return;
     }
 
-    //Filter the data from the DB (Not yet xD) or the memory with the query param 
+    //3) Filter the data from the DB (Not yet xD) or the memory with the query param
+    const search = q.toString().toLowerCase()
 
-    //Return 200 with the filtered data
-
-    res.status(200).json({ data: [] })
-
+    const filteredData = userData.filter(row => {
+        return Object
+        .values(row)
+        .some(value => value.toLowerCase().includes(search))
+    })
+    //4) Return 200 with the filtered data
+    res.status(200).json({ data: filteredData })
 })
 
 app.listen(port, () => {
