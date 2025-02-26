@@ -1,4 +1,4 @@
-import express, { raw } from 'express';
+import express from 'express';
 import cors from 'cors'
 import multer from 'multer'
 import csvToJson from 'convert-csv-to-json'
@@ -32,6 +32,7 @@ app.post('/api/files', upload.single('file'), async (req, res) => {
         const rawCsv = Buffer.from(file.buffer).toString('utf-8')
         //5) Transform string to json
         json = csvToJson.fieldDelimiter(',').csvStringToJson(rawCsv)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     }catch(error){
         res.status(500).json({message:'Error parsing the file'})
         return;
@@ -69,6 +70,11 @@ app.get('/api/users', async (req, res) => {
     //4) Return 200 with the filtered data
     res.status(200).json({ data: filteredData })
 })
+
+//just to see something in the webpage
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)

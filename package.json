@@ -1,0 +1,39 @@
+{
+  "name": "react-notas_bk_ft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eslint.config.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint frontend backend  --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Usuario001/react-notas-bknd-frntn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Usuario001/react-notas-bknd-frntn/issues"
+  },
+  "homepage": "https://github.com/Usuario001/react-notas-bknd-frntn#readme",
+  "devDependencies": {
+    "@eslint/compat": "^1.2.7",
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "prettier": "^3.5.2",
+    "standard": "17.1.2",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.22.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
