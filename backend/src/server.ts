@@ -48,6 +48,7 @@ app.post('/api/files', upload.single('file'), async (req, res) => {
 app.get('/api/users', async (req, res) => {
     //1) Extract the query param from request
     const { q } = req.query
+    console.log(q)
     //2) Validate that we have the query
     if ( !q ){
         res.status(500).json({message:'Query param `q` is required'})
