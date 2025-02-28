@@ -25,7 +25,11 @@
     "@types/node": "^22.13.4",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
+    "standard": "^17.1.2",
     "typescript": "^5.7.3"
   },
-  "description": ""
+  "eslintConfig": {
+  "extends": "standard"
+  }
 }
+
